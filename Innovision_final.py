@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import MinMaxScaler
 
 # Load the college dataset (replace 'your_colleges_data.csv' with your actual file)
-file_path = r"D:\Downloads\output_file.xls"
+file_path = r"output_file.xls"
 df = pd.read_csv(file_path)
 
 # Function to preprocess data and compute similarity matrix
