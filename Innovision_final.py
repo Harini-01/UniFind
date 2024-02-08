@@ -24,7 +24,7 @@ def preprocess_and_compute_similarity(df):
 
     # Compute similarity matrix
     similarity_matrix = cosine_similarity(df_encoded)
-
+    
     return similarity_matrix
 
 # Streamlit app
@@ -60,6 +60,7 @@ def get_recommendations(fees_preference, city_preference, df, similarity_matrix)
     sorted_indices = similarity_scores.argsort()[::-1]
     sorted_colleges = df.iloc[sorted_indices]
 
+    sorted_colleges = sorted_colleges.sort_values(by='Rating', ascending=False)
     return sorted_colleges
 
 if __name__ == '__main__':
